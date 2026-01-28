@@ -10,6 +10,8 @@ A simple Student Management System built using HTML and CSS.
 ## Technologies Used
 - HTML
 - CSS
+- JAVASCRIPT
 
 ## How to Run
 Just open `index.html` in a browser.
+
