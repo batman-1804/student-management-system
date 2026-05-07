@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Add Student - Student Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>Add Student</h1>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="view_students.html">View Students</a>
+  </nav>
+
+  <form id="add-student-form">
+    <label>Name: <input type="text" name="name" required></label><br>
+    <label>Roll: <input type="text" name="roll" required></label><br>
+    <button type="submit">Add</button>
+  </form>
+
+  <script>
+    // Minimal client-side placeholder: saves to localStorage
+    const form = document.getElementById('add-student-form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form));
+      const list = JSON.parse(localStorage.getItem('students') || '[]');
+      list.push(data);
+      localStorage.setItem('students', JSON.stringify(list));
+      alert('Student saved locally. Go to View Students to see it.');
+      form.reset();
+    });
+  </script>
+</body>
+</html>
